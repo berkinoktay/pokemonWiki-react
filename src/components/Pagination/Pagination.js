@@ -11,7 +11,7 @@ function Pagination({
     setMaxPageNumberLimit(5);
   }, [totalPosts]);
 
-  const [pageNumberLimit, setPageNumberLimit] = useState(5);
+  const [pageNumberLimit] = useState(5);
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
   const pageNumbers = [1];
@@ -19,21 +19,6 @@ function Pagination({
   for (let i = 2; i <= Math.ceil(totalPosts / postPerPage); i++) {
     pageNumbers.push(i);
   }
-
-  const returnNumberData = pageNumbers.map((number) => {
-    if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
-      console.log('number', number);
-      return (
-        <li
-          key={number}
-          onClick={() => paginate(number)}
-          className={`numbers ${currentPage === number ? 'active' : ''}`}
-        >
-          {number}
-        </li>
-      );
-    }
-  });
 
   return (
     <nav>
@@ -53,7 +38,19 @@ function Pagination({
             Prev
           </button>
         </li>
-        {returnNumberData}
+        {pageNumbers.map(
+          (number) =>
+            number < maxPageNumberLimit + 1 &&
+            number > minPageNumberLimit && (
+              <li
+                key={number}
+                onClick={() => paginate(number)}
+                className={`numbers ${currentPage === number ? 'active' : ''}`}
+              >
+                {number}
+              </li>
+            )
+        )}
         <li>
           <button
             className={`btn ${

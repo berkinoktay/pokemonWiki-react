@@ -87,6 +87,10 @@ body {
   position: absolute;
   right: 10px;
 }
+.listContainer h3 {
+  margin-top: 100px;
+  font-size: 2rem;
+}
 .listContainer .pokemonList {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

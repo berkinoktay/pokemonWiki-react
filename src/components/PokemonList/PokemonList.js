@@ -48,6 +48,7 @@ function PokemonList({
         />
         <ImSearch />
       </div>
+      {currentPokemonList.length === 0 && <h3>No pokemon found!</h3>}
       <ul className="pokemonList">
         {currentPokemonList
           .slice(indexOfFirstPost, indexOfLastPost)

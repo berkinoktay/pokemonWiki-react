@@ -11,8 +11,8 @@ function PokemonDetail() {
   const [loading, setLoading] = useState(true);
   const [pokemonImage, setPokemonImage] = useState('');
   const [pokemonDetails, setPokemonDetails] = useState({});
-  useEffect(async () => {
-    await axios(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+  useEffect(() => {
+    axios(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       .then((res) => {
         const { data } = res;
         setPokemonDetails({

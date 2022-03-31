@@ -7,8 +7,8 @@ function Container() {
   const [loading, setLoading] = useState(true);
   const [pokemonList, setPokemonList] = useState([]);
   const [currentPokemonList, setCurrentPokemonList] = useState([]);
-  useEffect(async () => {
-    await axios('https://pokeapi.co/api/v2/pokemon/?limit=898')
+  useEffect(() => {
+    axios('https://pokeapi.co/api/v2/pokemon/?limit=898')
       .then((res) => {
         const newPokemonData = [];
         res.data.results.forEach(async (pokemon, index) => {

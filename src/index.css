@@ -9,6 +9,7 @@
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 #root {
   height: 100%;
@@ -116,19 +117,20 @@ body {
   margin-bottom: 20px;
   padding: 3px 0;
 }
-.listContainer .pokemonList li > div {
+.listContainer .pokemonList li a > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
 }
-.listContainer .pokemonList li > div h2 {
+.listContainer .pokemonList li a > div h2 {
   margin-bottom: 20px;
   font-weight: bold;
   text-transform: capitalize;
   font-size: 1.4rem;
+  color: #000;
 }
-.listContainer .pokemonList li > div img {
+.listContainer .pokemonList li a > div img {
   width: 200px;
   height: 200px;
   object-fit: contain;
@@ -169,4 +171,65 @@ body {
 .btn.disabled {
   cursor: default;
   background: #395a8363;
+}
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 20px;
+  gap: 20px;
+}
+.notFound p {
+  color: #0000008c;
+  font-size: 1.2rem;
+}
+.notFound a {
+  color: #395a83;
+  text-decoration: none;
+  border: 1px solid #395a83;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.notFound a:hover {
+  background: #395a83;
+  color: #fff;
+}
+.noPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 20px;
+  gap: 20px;
+  background: #fff;
+}
+.noPage a {
+  color: #395a83;
+  text-decoration: none;
+  border: 1px solid #395a83;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.noPage a:hover {
+  background: #395a83;
+  color: #fff;
 }

@@ -2,7 +2,8 @@ import { ImSearch } from 'react-icons/im';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Pagination from '../Pagination/Pagination';
-import NotFound from '../../img/not-found.png';
+import NotFound from '../../img/no-image.png';
+import { Link } from 'react-router-dom';
 
 function PokemonList({
   loading,
@@ -56,18 +57,20 @@ function PokemonList({
           .slice(indexOfFirstPost, indexOfLastPost)
           .map((pokemon) => (
             <li key={pokemon.id}>
-              <span>#{pokemon.id}</span>
-              <div>
-                <h2>{pokemon.name}</h2>
-                <img
-                  src={pokemon.img}
-                  alt={pokemon.name}
-                  onError={(e) => {
-                    e.target.onError = null;
-                    e.target.src = NotFound;
-                  }}
-                />
-              </div>
+              <Link to={`/pokemon/${pokemon.name}`}>
+                <span>#{pokemon.id}</span>
+                <div>
+                  <h2>{pokemon.name}</h2>
+                  <img
+                    src={pokemon.img}
+                    alt={pokemon.name}
+                    onError={(e) => {
+                      e.target.onError = null;
+                      e.target.src = NotFound;
+                    }}
+                  />
+                </div>
+              </Link>
             </li>
           ))}
       </ul>

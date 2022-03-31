@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PokemonDetail from './components/PokemonDetail';
+import NoFound from './components/NoFound';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/pokemon/:pokemonName" element={<PokemonDetail />} />
+      <Route path="*" element={<NoFound />} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

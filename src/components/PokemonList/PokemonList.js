@@ -1,20 +1,16 @@
 import { ImSearch } from 'react-icons/im';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Pagination from '../Pagination/Pagination';
 import NotFound from '../../img/no-image.png';
 import { Link } from 'react-router-dom';
 
 function PokemonList({
-  loading,
-  setLoading,
   pokemonList,
-  setPokemonList,
   currentPokemonList,
   setCurrentPokemonList,
 }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(50);
+  const [postPerPage] = useState(50);
 
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;

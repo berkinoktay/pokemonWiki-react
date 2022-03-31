@@ -40,10 +40,7 @@ function Container() {
     <div className="container home">
       <Header />
       <PokemonList
-        loading={loading}
-        setLoading={setLoading}
         pokemonList={pokemonList}
-        setPokemonList={setPokemonList}
         currentPokemonList={currentPokemonList}
         setCurrentPokemonList={setCurrentPokemonList}
       />

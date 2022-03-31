@@ -286,6 +286,10 @@ body {
   font-weight: bold;
   padding: 20px;
   gap: 20px;
+  text-align: center;
+}
+.notFound img {
+  width: 100%;
 }
 .notFound p {
   color: #0000008c;
@@ -305,6 +309,10 @@ body {
   padding: 20px;
   gap: 20px;
   background: #fff;
+  text-align: center;
+}
+.noPage img {
+  width: 100%;
 }
 .back {
   display: flex;
